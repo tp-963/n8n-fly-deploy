@@ -1,8 +1,3 @@
-# fly.toml app configuration file generated for n8n-demo on 2025-04-26T12:35:50Z
-#
-# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
-#
-
 app = 'n8n-demo'
 primary_region = 'fra'
 
@@ -21,3 +16,8 @@ primary_region = 'fra'
   cpu_kind = 'shared'
   cpus = 1
   memory_mb = 1024
+
+# Persistantní disk pro n8n data
+[[mounts]]
+  source      = "n8n-data"
+  destination = "/home/node/.n8n"
